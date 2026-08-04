@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --panel-2: #10151c;
+  --border: #2a313c;
+  --border-soft: #21262d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --blue: #4c8dff;
+  --blue-dim: #4c8dff1a;
+  --green: #2fbf71;
+  --green-dim: #2fbf711a;
+  --amber: #e3a008;
+  --amber-dim: #e3a00822;
+  --red: #f85149;
+  --red-dim: #f8514922;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
+  --color-amber: var(--amber);
+  --color-red: var(--red);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Tailwind v4 puts its utilities (incl. responsive/state variants like
+ * md:hidden) inside CSS cascade layers. Plain unlayered CSS always beats
+ * layered CSS regardless of source order or specificity, so these custom
+ * component classes must live in @layer components too, or combinations
+ * like className="md:hidden btn" would never actually hide the element.
+ */
+@layer components {
+  .display {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+
+  .mono {
+    font-family: var(--font-mono), monospace;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 13.5px;
+    border: none;
+    cursor: pointer;
+    transition:
+      opacity 0.15s ease,
+      transform 0.1s ease;
+    text-decoration: none;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background: var(--blue);
+    color: #06101f;
+  }
+  .btn-primary:hover:not(:disabled) {
+    opacity: 0.88;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover:not(:disabled) {
+    border-color: #454e5c;
+  }
+  .btn-danger {
+    background: var(--red);
+    color: #240403;
+  }
+  .btn-danger:hover:not(:disabled) {
+    opacity: 0.88;
+  }
+
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--panel);
+  }
+
+  .input {
+    width: 100%;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 10px 13px;
+    color: var(--text);
+    font-size: 13.5px;
+    outline: none;
+  }
+  .input:focus {
+    border-color: var(--blue);
+  }
+
+  label.field-label {
+    display: block;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-family: var(--font-mono), monospace;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .badge-ok {
+    color: var(--green);
+    background: var(--green-dim);
+    border: 1px solid #2fbf7133;
+  }
+  .badge-warn {
+    color: var(--amber);
+    background: var(--amber-dim);
+    border: 1px solid #e3a00844;
+  }
+  .badge-crit {
+    color: var(--red);
+    background: var(--red-dim);
+    border: 1px solid #f8514944;
+  }
+  .badge-muted {
+    color: var(--muted);
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+  }
+
+  .error-text {
+    color: var(--red);
+    font-size: 12.5px;
+    margin-top: 6px;
+  }
+}
