@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/podsjetnici",
+      "schedule": "0 7 * * *"
+    }
+  ]
+}
