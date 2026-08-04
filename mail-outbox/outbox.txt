@@ -1,0 +1,252 @@
+Datum: 2026-08-04T13:16:27.303Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: auth-1785849385445-8361@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Ana Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/ff5a9999c5d6e875fd8dacfe264baee0bb09bac69eec9703dd3791e95d54c3a6
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T13:16:31.500Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: ratelimit-1785849390213-5933@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Ivo Testni,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/b151f719997f493f9769e2a102a2d45d1d456fe06f9adf16b8c5980ca1b344d4
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T13:16:40.261Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: lozinka-1785849398882-7735@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Sara Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/0455af1b589e21e7469a4a6e6ffe49ab562dd73afd1d01aa93146db34b0fe053
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T13:16:47.482Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: tenant-a-1785849406122-591@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Marko A,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/b8522278754f37d7e60a18747e55985dc1b546bb7c108742fd39269ce433957c
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T13:16:50.214Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: tenant-b-1785849409380-6626@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Petra B,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/720156e41b5d292a88c7af65cec944224e2fdc0b92a75027772eeb3b8b72ae8f
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T13:16:52.868Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: potrosnja-1785849411620-7194@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Iva Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/b8f573c47cb82485054acd2d0a1e127240b1d08212ee658e67a7bb70d1b9da14
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T15:07:43.267Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: auth-1785856061051-5079@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Ana Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/a93be4e747694b78caa1f2ea9669d862aebc23bb9a391d0869fdc261300a4dd0
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T15:07:47.654Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: ratelimit-1785856066198-2264@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Ivo Testni,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/9741270be6deb28a50fb871ea52df303f6f64a7e2e4f1025fe4fe91369be4636
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T15:07:56.484Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: lozinka-1785856075186-3975@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Sara Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/91a9cf7eeb21daacf42781202873ae5af590673d9cd6953173b4dcb45131e2f6
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T15:08:04.709Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: tenant-a-1785856083421-6254@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Marko A,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/8d40a822c36bec7be1fa321f8008e4eab5bcc0b391810ddcaad0c1620fd5c3f3
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T15:08:07.569Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: tenant-b-1785856086570-8241@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Petra B,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/881e07fc34b69617024499b9dac95d3e545d8a4acb789fa78c281b748279ab2f
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T15:08:10.088Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: potrosnja-1785856088768-1913@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Iva Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/514ad6c4d1b6f456ab9e119ab4f846b34e5142ab34074c63a87f11436dbe9e7b
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T16:46:34.993Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: auth-1785861993156-2628@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Ana Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/8d406fbf348ce0f487f80db930e07b236eb2c7694e6dbe4301ed04ddb5ed4f3f
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T16:46:39.074Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: ratelimit-1785861997858-3789@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Ivo Testni,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/366ad56e748abd1b8b6651f0a4b1916768652017f2d52a5d73335b967b3a622a
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T16:46:46.925Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: lozinka-1785862005692-6416@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Sara Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/d5ae1c9fc11bec85e3f99b6cbd711bbf505771de4a78c7627337a14bfb7e248d
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T16:46:54.006Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: tenant-a-1785862012632-8746@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Marko A,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/919c0db58bcf014fd3fda664076d1006db68cbfd7fa8ae8c844b24efa5f3e813
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T16:46:56.589Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: tenant-b-1785862015797-1453@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Petra B,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/0e6d06a281097ffbfdfcd6583e2c3662f3cdd49b36b221fce6b373eac9bda952
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------
+Datum: 2026-08-04T16:46:58.809Z
+Od: VozniPark <noreply@voznipark.hr>
+Za: potrosnja-1785862017629-1429@e2e-test.hr
+Naslov: VozniPark — potvrdite email adresu
+
+Pozdrav Iva Testna,
+
+potvrdite svoju email adresu klikom na poveznicu (vrijedi 24 sata):
+
+http://localhost:3000/potvrda-emaila/13b277de307189d45114daebbf621392015b94885bbcc038cfc6e67f63494188
+
+Ako se niste registrirali na VozniPark, zanemarite ovu poruku.
+
+----------------------------------------

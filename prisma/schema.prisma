@@ -1,0 +1,197 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  VOZAC
+}
+
+enum Plan {
+  STARTER
+  PRO
+  ENTERPRISE
+}
+
+enum VrstaGuma {
+  LJETNE
+  ZIMSKE
+}
+
+model Company {
+  id                String    @id @default(cuid())
+  naziv             String
+  plan              Plan      @default(STARTER)
+  pretplataDo       DateTime?
+  // true od registracije do prve (simulirane ili stvarne) uplate — dok je
+  // true, sve značajke su otključane bez obzira na `plan` (probni period).
+  // Nakon prve uplate trajno postaje false i primjenjuju se stvarna
+  // ograničenja odabranog plana.
+  naPocetnomProbnom Boolean   @default(true)
+  createdAt         DateTime  @default(now())
+
+  users    User[]
+  vehicles Vehicle[]
+}
+
+model User {
+  id                 String    @id @default(cuid())
+  email              String    @unique
+  passwordHash       String
+  ime                String
+  role               Role      @default(VOZAC)
+  sessionVersion     Int       @default(0)
+  emailVerificiranAt DateTime?
+  createdAt          DateTime  @default(now())
+
+  companyId String
+  company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  fuelEntries FuelEntry[]
+  dnevneVoznje DailyLog[]
+  resetTokeni PasswordResetToken[]
+  zamjeneGuma TireChange[]
+
+  @@index([companyId])
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  namjena   String   @default("reset")
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  // Za dnevno čišćenje isteklih tokena.
+  @@index([expiresAt])
+}
+
+// Brojač pokušaja po ključu (npr. "prijava:IP:email") — u bazi umjesto u
+// memoriji da radi i na serverless okruženjima s više instanci (Vercel).
+model RateLimit {
+  kljuc   String   @id
+  count   Int      @default(0)
+  resetAt DateTime
+
+  // Za dnevno čišćenje isteklih zapisa (ocistiIsteklo u lib/rate-limit.ts).
+  @@index([resetAt])
+}
+
+// Obrađene Stripe checkout sesije — spriječava dvostruko produljenje
+// pretplate ako korisnik dvaput otvori povratni URL.
+model StripeUplata {
+  id        String   @id
+  companyId String
+  createdAt DateTime @default(now())
+}
+
+// Obrađeni Creem webhook eventi — isti obrazac kao StripeUplata. Ključ je
+// ID samog eventa (ne narudžbe) jer i prva uplata (checkout.completed) i
+// svaka mjesečna obnova (subscription.paid) produljuju pretplatu, a Creem
+// ponavlja isporuku dok ne dobije 200.
+model CreemUplata {
+  id        String   @id
+  companyId String
+  createdAt DateTime @default(now())
+}
+
+model Vehicle {
+  id                  String    @id @default(cuid())
+  naziv               String
+  registracija        String
+  trenutniKm          Int       @default(0)
+  referentnaPotrosnja Float?
+  sljedeciServisKm    Int?
+  registracijaDo      DateTime?
+  osiguranjeDo        DateTime?
+  zadanaVrstaGoriva   String?
+  aktivno             Boolean   @default(true)
+  createdAt           DateTime  @default(now())
+
+  companyId String
+  company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  fuelEntries FuelEntry[]
+  dnevneVoznje DailyLog[]
+  zamjeneGuma TireChange[]
+
+  @@unique([companyId, registracija])
+  // Svaka stranica unutar /app filtrira upravo po ovom paru (aktivna vozila
+  // jedne firme) — složeni indeks pokriva i upite samo po companyId.
+  @@index([companyId, aktivno])
+}
+
+model FuelEntry {
+  id           String   @id @default(cuid())
+  datum        DateTime @default(now())
+  kmStanje     Int
+  litre        Float
+  ukupnaCijena Float
+  punSpremnik  Boolean  @default(true)
+  vrstaGoriva  String?
+  racunSlika   String?
+  napomena     String?
+  createdAt    DateTime @default(now())
+
+  vehicleId String
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // Točenja se uvijek dohvaćaju po vozilu i sortiraju po stanju km
+  // (izračun potrošnje full-to-full), pa indeks pokriva i filtriranje i
+  // sortiranje bez dodatnog prolaza kroz tablicu.
+  @@index([vehicleId, kmStanje])
+}
+
+model DailyLog {
+  id         String   @id @default(cuid())
+  datum      DateTime @default(now())
+  pocetniKm  Int
+  zavrsniKm  Int
+  napomena   String?
+  createdAt  DateTime @default(now())
+
+  vehicleId String
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([vehicleId, datum])
+}
+
+model TireChange {
+  id        String    @id @default(cuid())
+  datum     DateTime  @default(now())
+  vrsta     VrstaGuma
+  kmStanje  Int?
+  napomena  String?
+  createdAt DateTime  @default(now())
+
+  vehicleId String
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // Svaka lista vozila traži zadnju zamjenu po vozilu (orderBy datum desc,
+  // take 1) — bez ovog indeksa to je sortiranje cijele povijesti po vozilu.
+  @@index([vehicleId, datum])
+}
